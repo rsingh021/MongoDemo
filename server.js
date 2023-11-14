@@ -5,7 +5,7 @@ const User = require('./models/user');
 const app = express();
 const PORT = 3000;
 
-mongoose.connect('mongodb+srv://Demo123321:Demo12345@demo.2sjnv0g.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://Demo123321:Demo12345@demo.2sjnv0g.mongodb.net/');
 
 
 app.use(express.json());
@@ -22,7 +22,6 @@ app.post('/submit', async (req, res) => {
     const newUser = new User({ name, email });
     await newUser.save();
 
-    
     res.send('Data saved successfully!');
   } catch (error) {
     
